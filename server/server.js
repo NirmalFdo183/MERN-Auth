@@ -14,7 +14,7 @@ app.use(cors({ credentials: true }));
 
 connectDB();
 
-app.get("/", async (req, res) => await res.send("API Working fine"));
+app.get("/", (req, res) => res.json({ status: "ok", message: "API Working fine" }));
 
 app.listen(port, async () => {
   console.log(`Server started on PORT ${port}`);
